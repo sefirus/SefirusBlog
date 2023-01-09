@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
+using Application;
 using DataAccess;
+using DataAccess.Repositories;
 using Host.Middleware;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Controllers;
@@ -28,10 +30,13 @@ builder.Services.AddDbContext<BlogDbContext>(options =>
 
 builder.Services.AddCors(o => o.AddPolicy("MyPolicy", corsPolicyBuilder =>
 {
-    corsPolicyBuilder.WithOrigins("https://localhost:4200")
+    corsPolicyBuilder.WithOrigins("https://localhost")
         .AllowAnyMethod()
         .AllowAnyHeader();
 }));
+
+builder.Services.AddApplicationRepositories();
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
