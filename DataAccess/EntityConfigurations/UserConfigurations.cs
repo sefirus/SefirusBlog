@@ -17,7 +17,11 @@ public class UserConfigurations : IEntityTypeConfiguration<User>
 
         builder
             .Property(u => u.Nickname)
-            .HasMaxLength(500); ;
+            .HasMaxLength(500);
+
+        builder
+            .Property(u => u.IsActive)
+            .HasDefaultValue(true);
 
         builder
             .HasOne<Role>(u => u.Role)

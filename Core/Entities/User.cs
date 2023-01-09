@@ -1,6 +1,8 @@
-﻿namespace Core.Entities;
+﻿using Core.Interfaces;
 
-public class User
+namespace Core.Entities;
+
+public class User : ICreatableEntity
 {
     public Guid Id { get; set; }
     public string Email { get; set; }
@@ -11,5 +13,6 @@ public class User
     public bool IsActive { get; set; } = true;
     public Guid RoleId { get; set; }
     public Role Role { get; set; }
-    public DateTime CreatedAt { get; set; }
+    public List<Article> Articles { get; set; } = new List<Article>();
+    public DateTime CreatedDate { get; set; }
 }

@@ -28,7 +28,6 @@ public static class DataSeeder
         {
             Id = Guid.Parse("00000000-0000-0000-0000-000000000001"),
             BirthDate = new DateTime(2000, 1, 1),
-            CreatedAt = DateTime.Now,
             Email = "admin@email.com",
             Nickname = "Super Admin",
             RoleId = Guid.Parse("00000000-0000-0000-0000-000000000001"),

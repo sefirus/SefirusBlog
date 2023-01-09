@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Query;
 
 namespace Core.Interfaces;
 
-public interface IRepository<T> where T : class
+public interface IRepository<T> where T : class, ICreatableEntity
 {
     public IQueryable<T> GetQuery(
         Expression<Func<T, bool>>? filter = null,
