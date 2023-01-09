@@ -16,12 +16,8 @@ public class UserConfigurations : IEntityTypeConfiguration<User>
             .HasMaxLength(500);
 
         builder
-            .Property(u => u.FirstName)
-            .HasMaxLength(500);
-
-        builder
-            .Property(u => u.LastName)
-            .HasMaxLength(500);
+            .Property(u => u.Nickname)
+            .HasMaxLength(500); ;
 
         builder
             .HasOne<Role>(u => u.Role)

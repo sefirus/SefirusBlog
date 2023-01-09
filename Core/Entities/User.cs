@@ -6,8 +6,7 @@ public class User
     public string Email { get; set; }
     public byte[] PasswordHash { get; set; }
     public byte[] PasswordSalt { get; set; }
-    public string? FirstName { get; set; }
-    public string? LastName { get; set; }
+    public string? Nickname { get; set; }
     public DateTime BirthDate { get; set; }
     public bool IsActive { get; set; } = true;
     public Guid RoleId { get; set; }
