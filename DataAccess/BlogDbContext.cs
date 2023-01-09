@@ -16,5 +16,6 @@ public class BlogDbContext : DbContext
         base.OnModelCreating(builder);
             
         builder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+        builder.SeedRoles();
     }
 }
